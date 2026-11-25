@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbefd9" />
+  <title>Nuts coffee & cakes — Бровари | Меню та замовлення</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="walnuts walnuts-top" aria-hidden="true"><img src="walnuts.svg" alt="" /></div>
+
+  <div class="app-shell">
+    <header class="hero">
+      <div class="logo-wrap"><img src="logo.jpg" alt="Nuts coffee & cakes" /></div>
+      <h1>Nuts</h1>
+      <p class="hero-sub">coffee &amp; cakes · Бровари</p>
+    </header>
+
+    <section class="wifi-banner" aria-label="Гостьовий Wi-Fi">
+      <div class="wifi-info">
+        <span class="wifi-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        </span>
+        <div>
+          <p class="wifi-label">Гостьовий Wi-Fi</p>
+          <p class="wifi-ssid" id="wifiSsid">Nuts</p>
+        </div>
+      </div>
+      <button type="button" class="btn-wifi" id="copyWifiBtn">Скопіювати пароль від Wi-Fi</button>
+    </section>
+
+    <nav class="category-nav" aria-label="Категорії меню">
+      <div class="category-tabs" id="categoryTabs"></div>
+    </nav>
+
+    <main>
+      <div class="section-heading">
+        <h2 id="activeCategoryTitle">Кава</h2>
+        <span class="items-count" id="activeCategoryCount"></span>
+      </div>
+      <div class="menu-list" id="menuList"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-card">
+        <h3>Смакувала кава?</h3>
+        <p>Ваш відгук допомагає нам ставати кращими.</p>
+        <a id="mapsReviewLink" class="btn-light" href="#" target="_blank" rel="noopener noreferrer">★ Залишити відгук на Google Картах</a>
+        <a id="instagramLink" class="btn-ghost" href="#">Instagram кав'ярні</a>
+      </div>
+      <div class="location-card">
+        <div class="location-row">
+          <span class="loc-label">Адреса</span>
+          <a id="addressMapLink" href="#" target="_blank" rel="noopener noreferrer">Бровари · відкрити на карті ↗</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="walnuts walnuts-bottom" aria-hidden="true"><img src="walnuts.svg" alt="" /></div>
+
+  <div class="cart-bar-wrapper" id="cartBarWrapper" aria-hidden="true">
+    <button type="button" class="cart-bar" id="openCartBtn">
+      <span class="cart-bar-left"><span class="cart-badge" id="cartCountBadge">0</span><span>Переглянути замовлення</span></span>
+      <span id="cartTotalPrice">0 грн</span>
+    </button>
+  </div>
+
+  <div class="modal-backdrop" id="orderModalBackdrop" aria-hidden="true">
+    <div class="order-sheet" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <div class="sheet-header">
+        <h2 id="orderModalTitle">Ваше замовлення</h2>
+        <button type="button" class="btn-close-modal" id="closeModalBtn" aria-label="Закрити">✕</button>
+      </div>
+
+      <div id="orderFormView" class="order-form-view">
+        <div class="sheet-body">
+          <div class="cart-items-list" id="cartItemsList"></div>
+
+          <div class="form-group">
+            <label class="form-label">Коли ви будете?</label>
+            <div class="time-chips" id="timeChips">
+              <button type="button" class="time-chip active" data-time="Зараз (я в кав'ярні)">Зараз (я в кав'ярні)</button>
+              <button type="button" class="time-chip" data-time="Через 5 хв">Через 5 хв</button>
+              <button type="button" class="time-chip" data-time="Через 10 хв">Через 10 хв</button>
+              <button type="button" class="time-chip" data-time="Через 15 хв">Через 15 хв</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="orderComment">Побажання до замовлення</label>
+            <textarea id="orderComment" class="comment-input" rows="2" placeholder="Без цукру, на альтернативному молоці..."></textarea>
+          </div>
+
+          <div class="payment-note">💳 Оплата на касі при отриманні (карткою, Apple/Google Pay або готівкою)</div>
+        </div>
+
+        <div class="sheet-footer">
+          <div class="order-summary-row"><span>Разом до сплати</span><strong id="modalTotalPrice">0 грн</strong></div>
+          <button type="button" class="btn-submit-order" id="submitOrderBtn">Оформити замовлення</button>
+        </div>
+      </div>
+
+      <div id="orderSuccessView" class="order-success-view" hidden>
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h3 id="successTitle">Замовлення надіслано баристі!</h3>
+        <p class="success-sub" id="successSubtitle"></p>
+        <div class="success-details" id="successDetails"></div>
+        <button type="button" class="btn-submit-order" id="doneSuccessBtn">Повернутися до меню</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="menu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

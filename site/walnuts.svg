@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 4 600 96" fill="none">
+  <defs>
+    <linearGradient id="mapleOrange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e87a1e" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#c44d17" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="amberLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2b236" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#d98218" stop-opacity="0.78"/>
+    </linearGradient>
+    <linearGradient id="rustLeaf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b84a1e" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#8a3314" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="honeyLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5cc66" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#e39d2b" stop-opacity="0.72"/>
+    </linearGradient>
+    <linearGradient id="nutBody" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#b87333"/>
+      <stop offset="100%" stop-color="#6e3e19"/>
+    </linearGradient>
+    <!-- Кленовий осінній листок -->
+    <g id="maple">
+      <path d="M0 -24 L4 -12 L14 -16 L9 -5 L21 -2 L10 5 L15 14 L3 10 L0 20 L-3 10 L-15 14 L-10 5 L-21 -2 L-9 -5 L-14 -16 L-4 -12 Z"/>
+      <path d="M0 -18 L0 16 M0 2 L11 -2 M0 2 L-11 -2" stroke="#5e2a0c" stroke-width="0.9" stroke-linecap="round" opacity="0.38"/>
+    </g>
+    <!-- Фундук / горішок у чашечці -->
+    <g id="hazelnut">
+      <path d="M-8 -4 C-8 -11, 8 -11, 8 -4 C8 4, 3 11, 0 13 C-3 11, -8 4, -8 -4 Z" fill="url(#nutBody)"/>
+      <path d="M-9 -4 C-9 -12, 9 -12, 9 -4 C5 -2, -5 -2, -9 -4 Z" fill="#593115"/>
+      <path d="M-4 -2 C-3 3, -1 7, 0 10" stroke="#e8b878" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+    </g>
+  </defs>
+
+  <!-- Ліва осіння гілка -->
+  <path d="M-8 0 Q92 42 208 66" stroke="#7a4a21" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <use href="#maple" fill="url(#mapleOrange)" transform="translate(36 26) rotate(22) scale(1.15)"/>
+  <use href="#maple" fill="url(#amberLeaf)" transform="translate(106 46) rotate(-18) scale(0.95)"/>
+  <path d="M62 14 C82 2, 110 12, 102 34 C82 36, 68 26, 62 14 Z" fill="url(#honeyLeaf)"/>
+  <path d="M138 36 C160 24, 184 36, 174 58 C154 58, 142 48, 138 36 Z" fill="url(#rustLeaf)"/>
+  <path d="M166 56 C186 50, 206 60, 196 76 C178 76, 170 66, 166 56 Z" fill="url(#amberLeaf)"/>
+  <use href="#hazelnut" transform="translate(76 58) rotate(18) scale(1.05)"/>
+  <use href="#hazelnut" transform="translate(148 70) rotate(-25) scale(0.85)"/>
+
+  <!-- Центральний акцент -->
+  <path d="M275 -4 Q300 32 325 56" stroke="#7a4a21" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+  <path d="M242 4 C260 12, 264 34, 244 42 C234 26, 234 14, 242 4 Z" fill="url(#honeyLeaf)"/>
+  <use href="#maple" fill="url(#amberLeaf)" transform="translate(302 28) rotate(12) scale(0.92)"/>
+  <path d="M342 4 C362 12, 364 34, 344 40 C334 24, 334 14, 342 4 Z" fill="url(#mapleOrange)"/>
+  <use href="#hazelnut" transform="translate(274 44) rotate(28) scale(0.88)"/>
+  <use href="#hazelnut" transform="translate(334 48) rotate(-22) scale(0.82)"/>
+
+  <!-- Права осіння гілка -->
+  <path d="M608 0 Q508 42 392 66" stroke="#7a4a21" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <use href="#maple" fill="url(#mapleOrange)" transform="translate(564 26) rotate(-22) scale(1.15)"/>
+  <use href="#maple" fill="url(#amberLeaf)" transform="translate(494 46) rotate(18) scale(0.95)"/>
+  <path d="M538 14 C518 2, 490 12, 498 34 C518 36, 532 26, 538 14 Z" fill="url(#honeyLeaf)"/>
+  <path d="M462 36 C440 24, 416 36, 426 58 C446 58, 458 48, 462 36 Z" fill="url(#rustLeaf)"/>
+  <path d="M434 56 C414 50, 394 60, 404 76 C422 76, 430 66, 434 56 Z" fill="url(#amberLeaf)"/>
+  <use href="#hazelnut" transform="translate(524 58) rotate(-18) scale(1.05)"/>
+  <use href="#hazelnut" transform="translate(452 70) rotate(25) scale(0.85)"/>
+
+  <!-- Дрібні золотисті ягоди / іскри -->
+  <g opacity="0.85">
+    <circle cx="195" cy="24" r="3.5" fill="#d95b16"/>
+    <circle cx="204" cy="30" r="2.5" fill="#f0a824"/>
+    <circle cx="405" cy="24" r="3.5" fill="#d95b16"/>
+    <circle cx="396" cy="30" r="2.5" fill="#f0a824"/>
+  </g>
+</svg>
